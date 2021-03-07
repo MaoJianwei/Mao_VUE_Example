@@ -1,9 +1,7 @@
-
-
 <template>
   <div>
     <el-button type="primary" icon="el-icon-edit"
-               ref="maoB1"  @click="maoDoClick()">添加设备</el-button>
+               ref="maoB1"  @click="maoDoClick()">ce shi ye mian</el-button>
     <el-button type="primary" icon="el-icon-edit"
                ref="maoB2"  @click="maoDoClick()">移除设备</el-button>
 
@@ -32,7 +30,7 @@
       <el-table-column label="MaoOperate">
         <template slot-scope="scope">
           <el-button type="primary" icon="el-icon-edit"
-                      @click="maoDoRowClick(scope.$index, scope.row)"></el-button>
+                     @click="maoDoRowClick(scope.$index, scope.row)"></el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -44,7 +42,7 @@
 
 <script>
 export default {
-  name: "main1",
+  name: "MaoCloudMonitor",
 
   data() {
     return {
@@ -67,7 +65,6 @@ export default {
   },
 
   methods: {
-
     refreshData() {
       if (this.refreshSwitch) {
         var vueThis = this;

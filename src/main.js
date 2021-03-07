@@ -1,8 +1,12 @@
 import Vue from 'vue'
-import App from './App.vue'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import Axios from 'axios'
+
+import App from './App.vue'
+
+// Mao: it must be named as 'router' when import
+import router from './mao-router'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = Axios.create({
@@ -12,6 +16,9 @@ Vue.prototype.$http = Axios.create({
 
 Vue.use(ElementUI)
 
+
 new Vue({
+  router,
+
   render: h => h(App),
 }).$mount('#app')

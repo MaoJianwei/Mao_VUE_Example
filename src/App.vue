@@ -7,16 +7,16 @@
       <el-header>Bigmao Radio Station</el-header>
       <el-container>
         <el-aside>
-          <el-menu>
-            <el-menu-item index="2">
+          <el-menu default-active="/deviceControl" router>
+            <el-menu-item index="/deviceControl">
+              <i class="el-icon-menu"></i>
+              设备管理
+            </el-menu-item>
+            <el-menu-item index="/cloudMonitor">
               <i class="el-icon-loading"></i>
               qingdao
             </el-menu-item>
-            <el-menu-item index="3">
-              <i class="el-icon-loading"></i>
-              qingdao
-            </el-menu-item>
-            <el-menu-item index="4">
+            <el-menu-item index="1">
               <i class="el-icon-loading"></i>
               qingdao
             </el-menu-item>
@@ -26,7 +26,7 @@
 
 
         <el-main>
-          <main1></main1>
+          <router-view name="maoMain"></router-view>
         </el-main>
       </el-container>
     </el-container>
@@ -35,14 +35,10 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import main1 from "@/components/main1";
 
 export default {
   name: 'App',
   components: {
-    main1
-    // HelloWorld
   }
 }
 </script>

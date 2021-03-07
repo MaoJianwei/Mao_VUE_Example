@@ -1,5 +1,3 @@
-
-
 <template>
   <div>
     <el-button type="primary" icon="el-icon-edit"
@@ -32,7 +30,9 @@
       <el-table-column label="MaoOperate">
         <template slot-scope="scope">
           <el-button type="primary" icon="el-icon-edit"
-                      @click="maoDoRowClick(scope.$index, scope.row)"></el-button>
+                     @click="maoDoRowClick(scope.$index, scope.row)"></el-button>
+          <el-button type="primary" icon="el-icon-edit" @click="maoDeviceOnline()">上线</el-button>
+          <el-button type="primary" icon="el-icon-edit" @click="maoDeviceOffline()">下线</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -44,7 +44,7 @@
 
 <script>
 export default {
-  name: "main1",
+  name: "DeviceControl",
 
   data() {
     return {
@@ -67,7 +67,6 @@ export default {
   },
 
   methods: {
-
     refreshData() {
       if (this.refreshSwitch) {
         var vueThis = this;
@@ -92,6 +91,19 @@ export default {
     maoDoClick() {
 
     },
+    maoDeviceOnline() {
+
+    },
+    maoDeviceOffline() {
+
+    },
+
+
+
+
+
+
+
     // maoDoClick() {
     //   var vueThis = this;
     //   this.$http.get("https://www.maojianwei.com/resources/Dynamic/MyFavorite.json")
