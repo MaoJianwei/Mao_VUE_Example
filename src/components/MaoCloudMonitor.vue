@@ -46,7 +46,7 @@ export default {
 
   data() {
     return {
-      refreshSwitch: true,
+      refreshSwitch: false,
       refreshTimer: '',
 
 
@@ -79,7 +79,7 @@ export default {
               }
             })
             .catch(function (err) {
-              alert("errMao" + err);
+              console.log("errMao" + err);
             })
       }
       this.refreshTimer = setTimeout(this.refreshData, 1000);
