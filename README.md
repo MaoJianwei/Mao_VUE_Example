@@ -1,5 +1,7 @@
 # Mao_VUE_Example
 
+[![Node.js CI](https://github.com/MaoJianwei/Mao_VUE_Example/actions/workflows/node.js.yml/badge.svg)](https://github.com/MaoJianwei/Mao_VUE_Example/actions/workflows/node.js.yml)
+
 vue 3.0 with element-plus
 
 ## Project setup
