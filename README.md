@@ -1,4 +1,6 @@
-# vue_front_end
+# Mao_VUE_Example
+
+vue 3.0 with element-plus
 
 ## Project setup
 ```
