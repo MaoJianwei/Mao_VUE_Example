@@ -6,20 +6,32 @@
     <el-container class="class-container">
       <el-header>Bigmao Radio Station</el-header>
       <el-container>
-        <el-aside width="200px">
-          <el-menu default-active="/deviceControl" style="height: 100%" router>
-            <el-menu-item index="/deviceControl">
+        <el-aside style="width: 150px">
+          <el-menu default-active="/deviceStatus" style="height: 100%" router @select="handleSelect">
+<!--            <el-menu-item index="/deviceControl">-->
+<!--              <el-icon><Menu /></el-icon>-->
+<!--              设备管理-->
+<!--            </el-menu-item>-->
+            <el-menu-item index="/deviceStatus">
               <el-icon><Menu /></el-icon>
-              <span>设备管理</span>
+              设备状态
             </el-menu-item>
-            <el-menu-item index="/cloudMonitor">
-              <el-icon class="is-loading"><Loading /></el-icon>
-              <span>qingdao</span>
+            <el-menu-item index="/config">
+              <el-icon><Menu /></el-icon>
+              服务配置
             </el-menu-item>
-            <el-menu-item index="/ONOS">
-              <el-icon><Loading /></el-icon>
-              <span>ONOS</span>
-            </el-menu-item>
+<!--            <el-menu-item index="/cloudMonitor">-->
+<!--              <el-icon class="is-loading">-->
+<!--                <Loading />-->
+<!--              </el-icon>-->
+<!--              qingdao-->
+<!--            </el-menu-item>-->
+<!--            <el-menu-item index="/ONOS">-->
+<!--              <el-icon>-->
+<!--                <Loading />-->
+<!--              </el-icon>-->
+<!--              ONOS-->
+<!--            </el-menu-item>-->
           </el-menu>
         </el-aside>
 
@@ -34,18 +46,18 @@
   </div>
 </template>
 
-<script setup>
-import {
-  Menu,
-    Loading
-} from '@element-plus/icons-vue'
-</script>
-
 <script>
 
 export default {
   name: 'App',
   components: {
+  },
+  methods: {
+    handleSelect(index, indexPath) {
+      if (index === "/config") {
+        console.log(index, indexPath)
+      }
+    }
   }
 }
 </script>

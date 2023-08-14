@@ -13,7 +13,8 @@
         active-text="启用刷新">
     </el-switch>
 
-    <el-table :data="maoTableData" ref="maoTable" @cell-click="maoTableClick" :cell-class-name="tableCellClassName" empty-text="暂无数据">
+    <el-table :data="maoTableData" ref="maoTable" @cell-click="maoTableClick" :cell-class-name="tableCellClassName"
+              empty-text="暂无数据">
       <el-table-column label="" type="expand">
         <template v-slot:default="maoDetailScope">
           <el-form label-position="left" inline class="mao-table-expand">
@@ -40,8 +41,12 @@
         <template v-slot:default="scope">
           <el-button type="primary" icon="el-icon-edit"
                      @click="maoDoRowClick(scope.$index, scope.row)"></el-button>
-          <el-button type="primary" icon="el-icon-edit" :disabled="scope.row.onlineDisabled" @click="maoDeviceOnline(scope.row.MaoDeviceId)">上线</el-button>
-          <el-button type="primary" icon="el-icon-edit" :disabled="scope.row.offlineDisabled" @click="maoDeviceOffline(scope.row.MaoDeviceId)">下线</el-button>
+          <el-button type="primary" icon="el-icon-edit" :disabled="scope.row.onlineDisabled"
+                     @click="maoDeviceOnline(scope.row.MaoDeviceId)">上线
+          </el-button>
+          <el-button type="primary" icon="el-icon-edit" :disabled="scope.row.offlineDisabled"
+                     @click="maoDeviceOffline(scope.row.MaoDeviceId)">下线
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -52,10 +57,12 @@
 .mao-table-expand {
   font-size: 0;
 }
+
 .mao-table-expand label {
   width: 90px;
   color: #99a9bf;
 }
+
 .mao-table-expand .el-form-item {
   margin-right: 0;
   margin-bottom: 0;
@@ -100,7 +107,6 @@ export default {
   },
 
   methods: {
-
 
     tableCellClassName({row, column, rowIndex, columnIndex}) {
       //利用单元格的 className 的回调方法，给行列索引赋值
