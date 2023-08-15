@@ -8,8 +8,9 @@
     <el-menu
         default-active="/config/email"
         mode="horizontal"
-        @select="handleSelect"
         router>
+      <!--        @select="handleSelect"-->
+
       <el-menu-item index="/config/email">邮件通知配置</el-menu-item>
       <el-menu-item index="/config/icmp">ICMP检测配置</el-menu-item>
       <el-menu-item index="/config/topo">拓扑接口配置</el-menu-item>
@@ -48,14 +49,14 @@ export default {
   },
 
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key)
-      console.log(keyPath)
-      // this.$router.push({
-      //   path: key,
-      //   params: {data: keyPath }
-      // })
-    }
+    // handleSelect(key, keyPath) {
+    //   console.log(key)
+    //   console.log(keyPath)
+    //   // this.$router.push({
+    //   //   path: key,
+    //   //   params: {data: keyPath }
+    //   // })
+    // }
   }
 }
 </script>

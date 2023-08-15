@@ -4,10 +4,12 @@
     <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
 
     <el-container class="class-container">
-      <el-header>Bigmao Radio Station</el-header>
+      <el-header style="font-size: xx-large;">Bigmao Radio Station</el-header>
       <el-container>
-        <el-aside style="width: 150px">
-          <el-menu default-active="/deviceStatus" style="height: 100%" router @select="handleSelect">
+        <el-aside style="width: 210px">
+          <el-menu default-active="/deviceStatus" style="height: 100%" router>
+<!--            @select="handleSelect"-->
+
 <!--            <el-menu-item index="/deviceControl">-->
 <!--              <el-icon><Menu /></el-icon>-->
 <!--              设备管理-->
@@ -19,6 +21,10 @@
             <el-menu-item index="/config">
               <el-icon><Menu /></el-icon>
               服务配置
+            </el-menu-item>
+            <el-menu-item index="/apiListOldApi">
+              <el-icon><Menu /></el-icon>
+              API列表、老版WebUI
             </el-menu-item>
 <!--            <el-menu-item index="/cloudMonitor">-->
 <!--              <el-icon class="is-loading">-->
@@ -53,11 +59,11 @@ export default {
   components: {
   },
   methods: {
-    handleSelect(index, indexPath) {
-      if (index === "/config") {
-        console.log(index, indexPath)
-      }
-    }
+    // handleSelect(index, indexPath) {
+    //   if (index === "/config") {
+    //     console.log(index, indexPath)
+    //   }
+    // }
   }
 }
 </script>

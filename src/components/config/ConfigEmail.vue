@@ -1,6 +1,6 @@
 <template>
   <div style="margin: 20px" />
-  <el-form :model="form" label-width="120px" label-position="top" style="max-width: 460px" action="/addServiceIp" method="post">
+  <el-form :model="form" label-width="120px" label-position="top" style="max-width: 600px">
     <el-form-item label="Username">
       <el-input v-model="form.username"/>
     </el-form-item>
@@ -50,13 +50,12 @@ export default {
       var vueThis = this;
       this.$http.get("/api/getEmailInfo")
           .then(function (res) {
-            console.log(res.status)
-
             var data = res.data;
             vueThis.form.username = data["username"]
             vueThis.form.smtpServerAddrPort = data["smtpServerAddrPort"]
             vueThis.form.sender = data["sender"]
             vueThis.form.receiver = data["receiver"].join("\n")
+            vueThis.form.password = ""
           })
           .catch(function (err) {
             console.log("errMao: " + err);
@@ -64,19 +63,20 @@ export default {
     },
 
     onSubmit() {
+      var vueThis = this;
       this.$http.post("/api/addEmailInfo", this.form,
           {
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded;'
             }
           })
-          .then(function (res) {
-            console.log(res.status)
+          .then(function () { // res
+            // setTimeout(vueThis.onLoad, 500)
+            vueThis.onLoad()
           })
           .catch(function (err) {
             console.log("errMao: " + err);
           });
-      console.log("onSubmit ConfigEmail")
     },
   },
 }

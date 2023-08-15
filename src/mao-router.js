@@ -9,6 +9,7 @@ import DeviceInfo from "@/components/DeviceInfo.vue";
 import DeviceControl from "@/components/DeviceControl";
 import MaoCloudMonitor from "@/components/MaoCloudMonitor";
 import ONOS from "@/components/ONOS";
+import ApiListOldApi from "@/components/ApiListOldApi.vue"
 
 // Vue.use(VueRouter)
 
@@ -75,6 +76,12 @@ export default createRouter({
                 path: '/onos',
                 components: {
                     maoMain: ONOS
+                }
+            },
+            {
+                path: '/apiListOldApi',
+                components: {
+                    maoMain: ApiListOldApi
                 }
             }
         ]

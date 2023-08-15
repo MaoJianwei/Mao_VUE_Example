@@ -1,17 +1,11 @@
 <template>
-  <div>
-<!--    <el-button type="primary" :icon="Edit"-->
-<!--               ref="maoB1" @click="maoDoClick()">添加设备-->
-<!--    </el-button>-->
-<!--    <el-button type="primary" :icon="Edit"-->
-<!--               ref="maoB2" @click="maoDoClick()">移除设备-->
-<!--    </el-button>-->
-
-    <el-switch
-        v-model="refreshSwitch"
-        size="default"
-        active-text="启用刷新">
-    </el-switch>
+    <el-row class="row-bg" justify="center">
+      <el-switch
+          v-model="refreshSwitch"
+          size="default"
+          active-text="启用刷新">
+      </el-switch>
+    </el-row>
 
     <el-table :data="maoTableData" ref="maoTable" @cell-click="maoTableClick" :cell-class-name="tableCellClassName"
               :row-class-name="tableRowClassName" empty-text="暂无数据" max-height="845px">
@@ -34,8 +28,6 @@
       <el-table-column label="Last Seen" prop="Last_Seen" />
       <el-table-column label="Timestamp" prop="RttOutbound_or_Remote_Timestamp" />
     </el-table>
-
-  </div>
 </template>
 
 <style>
